@@ -11,17 +11,14 @@ public class Department extends BaseAuditableEntity {
 
     @Column(nullable = false, unique = true, length = 100)
     private String name;
-
     @Column(nullable = false)
     private Integer status = 1;
-
     @PostLoad
     private void ensureStatus() {
         if (status == null) {
             status = 1;
         }
     }
-
     public String getName() {
         return name;
     }

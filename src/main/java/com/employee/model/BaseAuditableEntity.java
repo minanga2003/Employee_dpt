@@ -10,10 +10,6 @@ import jakarta.persistence.PreUpdate;
 
 import java.time.LocalDateTime;
 
-/**
- * Shared auditing state for all entities. Keeps auditing logic DRY and
- * enforces consistent metadata for created/modified tracking.
- */
 @MappedSuperclass
 public abstract class BaseAuditableEntity {
 
@@ -51,17 +47,9 @@ public abstract class BaseAuditableEntity {
         }
         onPreUpdate();
     }
-
-    /**
-     * Hook for subclasses to add @PrePersist logic without owning the annotation.
-     */
     protected void onPrePersist() {
 
     }
-
-    /**
-     * Hook for subclasses to add @PreUpdate logic without owning the annotation.
-     */
     protected void onPreUpdate() {
     }
 
