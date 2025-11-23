@@ -105,5 +105,3 @@ public abstract class BaseAuditableEntity {
         this.modifiedUser = modifiedUser;
     }
 }
-
-
